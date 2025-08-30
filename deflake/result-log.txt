@@ -1,1 +1,3 @@
-
+📢 Dialog message: Product added
+[chromium] › tests\demoblaze.spec.ts:3:5 › Add to cart — с троттлингом 1 секунда
+📦 Raw /viewcart response: {"Items":[{"cookie":"user=44ca85ee-0655-6df1-4b44-40bc4b1fa921","id":"f119c843-113a-79bf-81f9-5d8e294b8b70","prod_id":1}]}
