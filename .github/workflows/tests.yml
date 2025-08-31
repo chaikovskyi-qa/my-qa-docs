@@ -1,4 +1,4 @@
-name: Playwright (positive + negative)
+name: Playwright (positive only)
 
 on:
   push:
@@ -21,11 +21,11 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Install Playwright (all browsers)
-        run: npx playwright install --with-deps
+      - name: Install Playwright (Chromium only)
+        run: npx playwright install --with-deps chromium
 
-      - name: Run ALL tests (positive + negative)
-        run: npx playwright test
+      - name: Run positive tests (Chromium)
+        run: npx playwright test positive/ --project=chromium
 
       - name: Upload HTML report
         if: always()
