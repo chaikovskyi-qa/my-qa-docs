@@ -18,14 +18,18 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install deps
-        run: npm install   # <<< заменили npm ci на npm install
+      # В репо нет package.json — создаём на лету и ставим Playwright
+      - name: Init npm project
+        run: npm init -y
 
-      - name: Install Playwright (Chromium only)
+      - name: Install Playwright test runner
+        run: npm i -D @playwright/test
+
+      - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
       - name: Run positive tests (Chromium)
-        run: npx playwright test positive/ --project=chromium
+        run: npx playwright test positive/demoblaze.stable.spec.ts --project=chromium
 
       - name: Upload HTML report
         if: always()
