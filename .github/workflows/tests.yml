@@ -1,10 +1,8 @@
 name: Playwright (positive only)
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  push: { branches: ["main"] }
+  pull_request: { branches: ["main"] }
 
 jobs:
   test:
@@ -18,7 +16,7 @@ jobs:
         with:
           node-version: 18
 
-      # В репо нет package.json — создаём на лету и ставим Playwright
+      # В репо нет package.json — инициализируем проект
       - name: Init npm project
         run: npm init -y
 
@@ -28,8 +26,9 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Run positive tests (Chromium)
-        run: npx playwright test positive/demoblaze.stable.spec.ts --project=chromium
+      # Без --project, чтобы не требовался playwright.config.ts
+      - name: Run positive tests
+        run: npx playwright test positive/demoblaze.stable.spec.ts --reporter=html
 
       - name: Upload HTML report
         if: always()
