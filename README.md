@@ -1,3 +1,5 @@
+![CI](https://github.com/chaikovskiy-qa/my-qa-docs/actions/workflows/tests.yml/badge.svg)
+
 Personal QA notes, checklists, locators, and test automation patterns
 # QA Tests
 
