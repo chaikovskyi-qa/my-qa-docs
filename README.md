@@ -5,8 +5,8 @@ Personal QA notes, checklists, locators, and test automation patterns
 
 ## Positive
 Stable scenarios (always pass):  
-👉 [positive/](positive)
+[positive/](positive)
 
 ## Negative (Deflake)
 Scenarios under throttling, bugs found:  
-👉 [deflake/](deflake)
+[deflake/](deflake)
